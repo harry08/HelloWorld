@@ -1,0 +1,54 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group 'de.huebner'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+/**
+ * Simple Task.
+ */
+task hello {
+    group 'diverse'
+    description 'The hello task greets Gradle by saying "Hello Gradle"'
+
+    println 'I always get printed even though, I am not invoked'
+    
+    doFirst {
+        println 'Hello Gradle'
+    }
+    doLast {
+        println 'Bye bye Gradle'
+    }
+}
+
+task dependonhello(dependsOn: 'hello') {
+    group 'diverse'
+    doLast {
+        println "I depend on the hello task!"
+    }
+}
+
+task copyFile(type: Copy) {
+    group 'diverse'
+    description 'Copies the files from the folder source to a new folder destination."'
+
+    from 'source'
+    into 'destination'
+}
+
+task deleteDestinationFolder(type: Delete) {
+    group 'diverse'
+    description 'Deletes the whole destination folder"'
+
+    delete 'destination'
+}
