@@ -1,8 +1,5 @@
-
+# System Files
 .DS_Store
+Thumbs.db
+
 .idea/workspace.xml
-src/.DS_Store
-src/main/.DS_Store
-src/main/java/.DS_Store
-src/main/java/de/.DS_Store
-src/test/.DS_Store
