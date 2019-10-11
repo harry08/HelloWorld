@@ -1,0 +1,2 @@
+File used for gradle tests.
+Content of file 1.

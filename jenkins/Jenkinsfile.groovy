@@ -11,6 +11,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 script {
+                    echo('Execute tests...')
                     sh './gradlew test'
                 }
             }
@@ -21,6 +22,8 @@ pipeline {
         always {
             script {
                 echo('Post actions...')
+                echo('Copy Files...')
+                sh './gradlew copyFile'
             }
         }
     }

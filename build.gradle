@@ -40,9 +40,9 @@ task dependonhello(dependsOn: 'hello') {
 
 task copyFile(type: Copy) {
     group 'diverse'
-    description 'Copies the files from the folder source to a new folder destination."'
+    description 'Copies the files from the folder gradletest to a new folder destination."'
 
-    from 'source'
+    from 'gradletest'
     into 'destination'
 }
 
