@@ -20,7 +20,7 @@ pipeline {
 
     post {
         always {
-            junit 'target/test-reports/*.xml'
+            junit 'build/test-results/*.xml'
             
             script {
                 echo('Post actions...')
