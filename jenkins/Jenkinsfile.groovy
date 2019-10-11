@@ -20,6 +20,8 @@ pipeline {
 
     post {
         always {
+            junit 'target/test-reports/*.xml'
+            
             script {
                 echo('Post actions...')
                 echo('Copy Files...')
